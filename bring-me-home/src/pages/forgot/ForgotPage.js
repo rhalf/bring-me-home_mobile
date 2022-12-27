@@ -15,7 +15,7 @@ import logo from "../../assets/images/logo_light.png";
 
 import { primary } from "../../constants/colors";
 
-function LoginPage({ onLogin, onForgot, onSignup, onScan }) {
+function ForgotPage({ onLogin }) {
   const [enteredNumber, setEnteredNumber] = useState("");
 
   return (
@@ -25,13 +25,11 @@ function LoginPage({ onLogin, onForgot, onSignup, onScan }) {
       </BaseDiv>
 
       <BaseDiv marginTop={20}>
-        <BaseTitle>Log in</BaseTitle>
-        <BaseRow>
-          <BaseText>{"Don't have an account? "}</BaseText>
-          <BaseTextButton color={primary} onPress={onSignup}>
-            Sign up
-          </BaseTextButton>
-        </BaseRow>
+        <BaseTitle>Trouble logging in?</BaseTitle>
+        <BaseText>
+          Enter your email and we'll send you a link to get back into your
+          account.
+        </BaseText>
       </BaseDiv>
 
       <BaseDiv marginTop={20}>
@@ -42,38 +40,18 @@ function LoginPage({ onLogin, onForgot, onSignup, onScan }) {
       </BaseDiv>
 
       <BaseDiv marginTop={20}>
-        <BaseTextInput
-          label="Password"
-          placeholder="Password"
-          activeUnderlineColor={primary}></BaseTextInput>
-      </BaseDiv>
-
-      <BaseDiv marginTop={20}>
         <BaseButton backgroundColor={primary} color="white">
-          Login
+          Send Login Link
         </BaseButton>
       </BaseDiv>
 
       <BaseDiv marginTop={20}>
-        <BaseRow>
-          <BaseTextButton
-            color={primary}
-            width="50%"
-            textAlign="left"
-            onPress={onForgot}>
-            Forgot password?
-          </BaseTextButton>
-          <BaseTextButton
-            color={primary}
-            width="50%"
-            textAlign="right"
-            onPress={onScan}>
-            Scan Now?
-          </BaseTextButton>
-        </BaseRow>
+        <BaseTextButton color={primary} textAlign="center" onPress={onLogin}>
+          BackToLogin
+        </BaseTextButton>
       </BaseDiv>
     </BaseSheet>
   );
 }
 
-export default LoginPage;
+export default ForgotPage;

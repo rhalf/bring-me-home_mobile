@@ -1,6 +1,6 @@
 export const primary = "#b78c1f";
 export const secondary = "#dcaa2d";
-export const tertiary = "#cbcba1d";
+export const tertiary = "#d7a529";
 
 export const accent = "#b78c1f";
 

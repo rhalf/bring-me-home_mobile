@@ -15,7 +15,7 @@ import logo from "../../assets/images/logo_light.png";
 
 import { primary } from "../../constants/colors";
 
-function LoginPage({ onLogin, onForgot, onSignup, onScan }) {
+function LoginPage({ onLogin }) {
   const [enteredNumber, setEnteredNumber] = useState("");
 
   return (
@@ -25,13 +25,20 @@ function LoginPage({ onLogin, onForgot, onSignup, onScan }) {
       </BaseDiv>
 
       <BaseDiv marginTop={20}>
-        <BaseTitle>Log in</BaseTitle>
+        <BaseTitle>Sign up</BaseTitle>
         <BaseRow>
-          <BaseText>{"Don't have an account? "}</BaseText>
-          <BaseTextButton color={primary} onPress={onSignup}>
-            Sign up
+          <BaseText>{"Have an account? "}</BaseText>
+          <BaseTextButton color={primary} onPress={onLogin}>
+            Log in
           </BaseTextButton>
         </BaseRow>
+      </BaseDiv>
+
+      <BaseDiv marginTop={20}>
+        <BaseTextInput
+          label="Name"
+          placeholder="Name"
+          activeUnderlineColor={primary}></BaseTextInput>
       </BaseDiv>
 
       <BaseDiv marginTop={20}>
@@ -49,28 +56,16 @@ function LoginPage({ onLogin, onForgot, onSignup, onScan }) {
       </BaseDiv>
 
       <BaseDiv marginTop={20}>
-        <BaseButton backgroundColor={primary} color="white">
-          Login
-        </BaseButton>
+        <BaseTextInput
+          label="Confirm Password"
+          placeholder="Confirm Password"
+          activeUnderlineColor={primary}></BaseTextInput>
       </BaseDiv>
 
       <BaseDiv marginTop={20}>
-        <BaseRow>
-          <BaseTextButton
-            color={primary}
-            width="50%"
-            textAlign="left"
-            onPress={onForgot}>
-            Forgot password?
-          </BaseTextButton>
-          <BaseTextButton
-            color={primary}
-            width="50%"
-            textAlign="right"
-            onPress={onScan}>
-            Scan Now?
-          </BaseTextButton>
-        </BaseRow>
+        <BaseButton backgroundColor={primary} color="white">
+          Sign Up
+        </BaseButton>
       </BaseDiv>
     </BaseSheet>
   );
