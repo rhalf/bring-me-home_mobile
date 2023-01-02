@@ -19,23 +19,23 @@ import NfcManager, { NfcTech } from "react-native-nfc-manager";
 import { primary, secondary, success, tertiary } from "../../constants/colors";
 
 // Pre-step, call this before any NFC operations
-// NfcManager.start();
+NfcManager.start();
 
 function ScanPage() {
-  // async function readNdef() {
-  //   try {
-  //     // register for the NFC tag with NDEF in it
-  //     await NfcManager.requestTechnology(NfcTech.Ndef);
-  //     // the resolved tag object will contain `ndefMessage` property
-  //     const tag = await NfcManager.getTag();
-  //     console.warn("Tag found", tag);
-  //   } catch (ex) {
-  //     console.warn("Oops!", ex);
-  //   } finally {
-  //     // stop the nfc scanning
-  //     NfcManager.cancelTechnologyRequest();
-  //   }
-  // }
+  async function readNdef() {
+    try {
+      // register for the NFC tag with NDEF in it
+      await NfcManager.requestTechnology(NfcTech.Ndef);
+      // the resolved tag object will contain `ndefMessage` property
+      const tag = await NfcManager.getTag();
+      console.log("Tag found", tag);
+    } catch (ex) {
+      console.log("Oops!", ex);
+    } finally {
+      // stop the nfc scanning
+      NfcManager.cancelTechnologyRequest();
+    }
+  }
   return (
     <BaseSheet backgroundColor={primary}>
       <BaseDiv alignItems="center" marginTop={100}>
@@ -63,7 +63,7 @@ function ScanPage() {
       <BaseDiv marginTop={30}>
         <BaseRow>
           <BaseButton
-            // onPress={readNdef}
+            onPress={readNdef}
             backgroundColor={tertiary}
             color="white"
             width="100%"
