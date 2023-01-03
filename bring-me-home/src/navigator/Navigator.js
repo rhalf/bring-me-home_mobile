@@ -7,8 +7,13 @@ import LoginPage from "../pages/login/LoginPage";
 import SignupPage from "../pages/signup/SignupPage";
 import ForgotPage from "../pages/forgot/ForgotPage";
 import ScanPage from "../pages/scan/ScanPage";
+import BeneficiaryPage from "../pages/beneficiary/beneficiaryPage";
+
+import { useState } from "react";
 
 function Navigator() {
+  const [tag, setTag] = useState(null);
+
   function LandingScreen({ navigation }) {
     return (
       <LandingPage
@@ -60,9 +65,22 @@ function Navigator() {
   function ScanScreen({ navigation }) {
     return (
       <ScanPage
-        onSuccess={() => {
-          // navigation.navigate("ScanPage");
+        onSuccess={(tag) => {
+          setTag(tag);
+          navigation.navigate("BeneficiaryPage");
         }}></ScanPage>
+    );
+  }
+
+  function BeneficiaryScreen({ navigation }) {
+    return (
+      <BeneficiaryPage
+        tag={tag}
+        // onSuccess={(tag) => {
+        // setTag(tag);
+        // navigation.navigate("beneficiaryPage");
+        // }}
+      ></BeneficiaryPage>
     );
   }
 
@@ -94,6 +112,11 @@ function Navigator() {
         <Stack.Screen
           name="ScanPage"
           component={ScanScreen}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="BeneficiaryPage"
+          component={BeneficiaryScreen}
           options={{ headerShown: false }}
         />
       </Stack.Navigator>

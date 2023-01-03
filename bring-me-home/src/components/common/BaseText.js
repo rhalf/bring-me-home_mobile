@@ -1,7 +1,9 @@
 import { Text, StyleSheet } from "react-native";
 
-function BaseTitle({ children, textAlign, color }) {
-  return <Text style={{ ...styles.text, textAlign, color }}>{children}</Text>;
+function BaseTitle({ children, textAlign, color, width }) {
+  return (
+    <Text style={{ ...styles.text, textAlign, color, width }}>{children}</Text>
+  );
 }
 
 export default BaseTitle;

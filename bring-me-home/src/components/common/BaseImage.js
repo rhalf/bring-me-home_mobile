@@ -1,8 +1,27 @@
-import { Image, StyleSheet } from "react-native";
+import { Image, StyleSheet, Pressable } from "react-native";
 
-function BaseImage({ path, width, height }) {
+function BaseImage({
+  onPress,
+  path,
+  width,
+  height,
+  borderColor,
+  borderRadius,
+  borderWidth,
+}) {
   return (
-    <Image style={{ ...styles.image, width, height }} source={path}></Image>
+    <Pressable onPress={onPress}>
+      <Image
+        style={{
+          ...styles.image,
+          width,
+          height,
+          borderColor,
+          borderRadius,
+          borderWidth,
+        }}
+        source={path}></Image>
+    </Pressable>
   );
 }
 

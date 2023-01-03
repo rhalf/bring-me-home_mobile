@@ -1,3 +1,4 @@
+import { StatusBar } from "expo-status-bar";
 import { StyleSheet, View } from "react-native";
 import { useState, useCallback } from "react";
 import { useFonts } from "expo-font";
@@ -28,6 +29,7 @@ function App() {
 
   return (
     <View style={styles.rootScreen} onLayout={onLayoutRootView}>
+      <StatusBar style="auto" />
       <Navigator></Navigator>
     </View>
   );
@@ -37,6 +39,7 @@ const styles = StyleSheet.create({
   rootScreen: {
     flex: 1,
     backgroundColor: "#fff",
+    resizeMode: "cover", // or 'stretch'
   },
 });
 

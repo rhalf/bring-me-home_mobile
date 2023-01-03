@@ -1,5 +1,4 @@
-import { View, Dimensions } from "react-native";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import BaseSheet from "../../components/common/BaseSheet";
 import BaseTitle from "../../components/common/BaseTitle";
@@ -12,30 +11,40 @@ import BaseTextInput from "../../components/common/BaseTextInput";
 import BaseButton from "../../components/common/BaseButton";
 
 import logo from "../../assets/images/logo_dark.png";
-import scanNow from "../../assets/images/scan-now.png";
+import scanNowA from "../../assets/images/scan-now.png";
+import scanNowB from "../../assets/images/scan-now_grey.png";
 
-import NfcManager, { NfcTech } from "react-native-nfc-manager";
+import nfc from "../../utilities/nfc";
 
 import { primary, secondary, success, tertiary } from "../../constants/colors";
 
-// Pre-step, call this before any NFC operations
-NfcManager.start();
+nfc.start();
 
-function ScanPage() {
-  async function readNdef() {
-    try {
-      // register for the NFC tag with NDEF in it
-      await NfcManager.requestTechnology(NfcTech.Ndef);
-      // the resolved tag object will contain `ndefMessage` property
-      const tag = await NfcManager.getTag();
-      console.log("Tag found", tag);
-    } catch (ex) {
-      console.log("Oops!", ex);
-    } finally {
-      // stop the nfc scanning
-      NfcManager.cancelTechnologyRequest();
-    }
-  }
+function ScanPage({ onSuccess }) {
+  const [nfcDevice, setNfcDevice] = useState();
+  const [scan, setScan] = useState();
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setScan(!scan);
+    }, 500);
+
+    return () => {
+      clearInterval(interval);
+    };
+  });
+
+  useEffect(() => {
+    nfc.attachedReadEvent((tag) => {
+      console.log(nfc.getMessages(tag));
+      onSuccess(tag);
+    });
+
+    return () => {
+      nfc.attachedReadEvent(null);
+    };
+  });
+
   return (
     <BaseSheet backgroundColor={primary}>
       <BaseDiv alignItems="center" marginTop={100}>
@@ -43,34 +52,48 @@ function ScanPage() {
       </BaseDiv>
 
       <BaseDiv alignItems="center" marginTop={40}>
-        <BaseImage path={scanNow} width={250} height={250}></BaseImage>
+        {scan ? (
+          <BaseImage path={scanNowA} width={250} height={250}></BaseImage>
+        ) : (
+          <BaseImage path={scanNowB} width={250} height={250}></BaseImage>
+        )}
       </BaseDiv>
 
       <BaseDiv marginTop={30}>
         <BaseTitle color="white" textAlign="center">
-          Tap the
-          <BaseTitle color="skyblue"> BringMeHome Device </BaseTitle>
-          at the back of your phone.
+          Tap your
+          <BaseTitle color="skyblue"> Device </BaseTitle>
+          at the back of your phone to start fetching.
         </BaseTitle>
       </BaseDiv>
       <BaseDiv marginTop={10}>
         <BaseText color="white" textAlign="center">
-          Please wait for a moment while we fetch the information from our
-          server.
+          We are using NFC technology to scan your device. Please make sure that
+          your mobile phone is equipped with NFC.
         </BaseText>
       </BaseDiv>
 
       <BaseDiv marginTop={30}>
         <BaseRow>
-          <BaseButton
-            onPress={readNdef}
+          {/* <BaseButton
+            onPress={scanHandler}
             backgroundColor={tertiary}
             color="white"
             width="100%"
             textAlign="right"
             marginHorizontal={2}>
             Scan Now
-          </BaseButton>
+          </BaseButton> */}
+
+          {/* <BaseButton
+            onPress={toggle}
+            backgroundColor={tertiary}
+            color="white"
+            width="50%"
+            textAlign="right"
+            marginHorizontal={2}>
+            Toggle
+          </BaseButton> */}
         </BaseRow>
       </BaseDiv>
     </BaseSheet>
