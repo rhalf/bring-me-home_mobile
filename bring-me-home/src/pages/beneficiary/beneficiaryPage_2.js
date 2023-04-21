@@ -13,9 +13,9 @@ import BaseButton from "../../components/common/BaseButton";
 
 import BaseDialog from "../../components/dialog/DialogImage";
 
-import photo1 from "../../assets/avatar/sample2/1.jpg";
-import photo2 from "../../assets/avatar/sample2/2.jpg";
-import photo3 from "../../assets/avatar/sample2/3.jpg";
+import photo1 from "../../assets/avatar/sample1/1.jpg";
+import photo2 from "../../assets/avatar/sample1/2.jpg";
+import photo3 from "../../assets/avatar/sample1/3.jpg";
 
 import { primary, secondary, success, tertiary } from "../../constants/colors";
 import { View, ScrollView } from "react-native";
@@ -36,16 +36,13 @@ function BeneficiaryPage() {
 
         <BaseDiv alignItems="center" marginTop={20}>
           <BaseTitle color="white" textAlign="center">
-            Sean Ezekiel B. Belejapa
+            Dela Cruz Jr, Juan
           </BaseTitle>
           <BaseText color="white" textAlign="center">
-            (Student)
+            Lot 15 Block 15 Kalayaan Village Brgy. 201
           </BaseText>
           <BaseText color="white" textAlign="center">
-            Green Revolutionary St. CAA
-          </BaseText>
-          <BaseText color="white" textAlign="center">
-            Las Piñas City, Metro Manila Philippines
+            Pasay City, Metro Manila Philippines
           </BaseText>
         </BaseDiv>
 
@@ -115,7 +112,7 @@ function BeneficiaryPage() {
               Birth Date
             </BaseText>
             <BaseText color="white" textAlign="left" width="50%">
-              AUGUST 26, 2014
+              August 15, 1943
             </BaseText>
           </BaseRow>
 
@@ -124,7 +121,7 @@ function BeneficiaryPage() {
               Age
             </BaseText>
             <BaseText color="white" textAlign="left" width="50%">
-              {getAge(new Date("August 26, 2014"))} years old
+              {getAge(new Date("August 15, 1943"))} years old
             </BaseText>
           </BaseRow>
 
@@ -149,7 +146,7 @@ function BeneficiaryPage() {
 
         <BaseDiv marginTop={10}>
           <BaseTitle color="white" textAlign="left">
-            Contact Persons
+            Guardians
           </BaseTitle>
 
           <BaseRow>
@@ -157,7 +154,7 @@ function BeneficiaryPage() {
               Name
             </BaseText>
             <BaseText color="white" textAlign="left" width="60%">
-              Diana C. Birung
+              JOY F. INO
             </BaseText>
           </BaseRow>
           <BaseRow>
@@ -165,7 +162,7 @@ function BeneficiaryPage() {
               Mobile
             </BaseText>
             <BaseText color="white" textAlign="left" width="60%">
-              0969 2474 002
+              0956 1439 931
             </BaseText>
           </BaseRow>
           <BaseRow>
@@ -173,7 +170,7 @@ function BeneficiaryPage() {
               Email
             </BaseText>
             <BaseText color="white" textAlign="left" width="60%">
-              diana@bringmehome.life
+              joy@bringmehome.life
             </BaseText>
           </BaseRow>
 
@@ -184,7 +181,7 @@ function BeneficiaryPage() {
               Name
             </BaseText>
             <BaseText color="white" textAlign="left" width="60%">
-              Dennis Reyes
+              Ryan Ino
             </BaseText>
           </BaseRow>
           <BaseRow>
@@ -192,7 +189,7 @@ function BeneficiaryPage() {
               Mobile
             </BaseText>
             <BaseText color="white" textAlign="left" width="60%">
-              0917 1234 567
+              0908 8873 225
             </BaseText>
           </BaseRow>
           <BaseRow>
@@ -200,7 +197,7 @@ function BeneficiaryPage() {
               Email
             </BaseText>
             <BaseText color="white" textAlign="left" width="60%">
-              dennis@bringmehome.life
+              ryan@bringmehome.life
             </BaseText>
           </BaseRow>
         </BaseDiv>
@@ -210,17 +207,19 @@ function BeneficiaryPage() {
             Allergies
           </BaseTitle>
           <BaseText color="white" textAlign="left">
-            - Buko (Minimal)
+            Anisakis Simplex
           </BaseText>
           <BaseText color="white" textAlign="left">
             - Allergic reactions to seafood
           </BaseText>
 
           <BaseText color="white" textAlign="left">
-            - Shrimp
+            Atopic dermatitis
           </BaseText>
           <BaseText color="white" textAlign="left">
-            - Tuyo
+            - is when the skin becomes easily irritated, itchy, and dry. It is
+            the most common allergic skin condition, and is more common in
+            children than adults.
           </BaseText>
         </BaseDiv>
 
@@ -229,7 +228,7 @@ function BeneficiaryPage() {
             Disabilities
           </BaseTitle>
           <BaseText color="white" textAlign="left">
-            Autism with ADHD
+            Dementia
           </BaseText>
           {/* <BaseText color="white" textAlign="left">
             Autism
@@ -272,10 +271,10 @@ function BeneficiaryPage() {
             Medical History
           </BaseTitle>
           <BaseText color="white" textAlign="left">
-            -
+            1. cardiac stent within the last six month
           </BaseText>
           <BaseText color="white" textAlign="left">
-            -
+            2. history of Dementia
           </BaseText>
           {/* <BaseText color="white" textAlign="left">
             3. artificial heart valve (PFO)

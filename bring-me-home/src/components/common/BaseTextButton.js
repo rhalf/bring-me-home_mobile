@@ -1,13 +1,24 @@
 import { Text, Pressable, StyleSheet } from "react-native";
 
-function BaseTextButton({ children, onPress, color, width, textAlign }) {
+function BaseTextButton({
+  children,
+  onPress,
+  color,
+  width,
+  textAlign,
+  backgroundColor,
+  padding,
+}) {
   return (
     <Pressable
       style={({ pressed }) =>
         pressed ? { ...styles.pressed, width } : { ...styles.notPressed, width }
       }
       onPress={onPress}>
-      <Text style={{ ...styles.text, color, textAlign }}>{children}</Text>
+      <Text
+        style={{ ...styles.text, color, textAlign, backgroundColor, padding }}>
+        {children}
+      </Text>
     </Pressable>
   );
 }

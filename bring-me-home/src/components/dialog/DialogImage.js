@@ -1,4 +1,5 @@
 import { Alert, Modal, StyleSheet, View } from "react-native";
+import { StatusBar } from "expo-status-bar";
 
 import BaseText from "../common/BaseText";
 import BaseButton from "../common/BaseButton";

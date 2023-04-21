@@ -36,7 +36,8 @@ function ScanPage({ onSuccess }) {
 
   useEffect(() => {
     nfc.attachedReadEvent((tag) => {
-      console.log(nfc.getMessages(tag));
+      console.log(tag);
+
       onSuccess(tag);
     });
 
@@ -51,7 +52,15 @@ function ScanPage({ onSuccess }) {
         <BaseImage path={logo} width={200} height={140}></BaseImage>
       </BaseDiv>
 
-      <BaseDiv alignItems="center" marginTop={40}>
+      <BaseDiv marginTop={20}>
+        <BaseTitle color="white" textAlign="center">
+          Tap your
+          <BaseTitle color="skyblue"> Device </BaseTitle>
+          at the back of your phone to start fetching.
+        </BaseTitle>
+      </BaseDiv>
+
+      <BaseDiv alignItems="center" marginTop={20}>
         {scan ? (
           <BaseImage path={scanNowA} width={250} height={250}></BaseImage>
         ) : (
@@ -59,13 +68,6 @@ function ScanPage({ onSuccess }) {
         )}
       </BaseDiv>
 
-      <BaseDiv marginTop={30}>
-        <BaseTitle color="white" textAlign="center">
-          Tap your
-          <BaseTitle color="skyblue"> Device </BaseTitle>
-          at the back of your phone to start fetching.
-        </BaseTitle>
-      </BaseDiv>
       <BaseDiv marginTop={10}>
         <BaseText color="white" textAlign="center">
           We are using NFC technology to scan your device. Please make sure that

@@ -35,26 +35,23 @@ function LoginPage({ onLogin, onScan }) {
       </BaseDiv>
 
       <BaseDiv marginTop={50}>
-        <BaseRow>
-          <BaseButton
-            onPress={onLogin}
-            backgroundColor={tertiary}
-            color="white"
-            width="50%"
-            textAlign="left"
-            marginHorizontal={2}>
-            Login
-          </BaseButton>
-          <BaseButton
-            onPress={onScan}
-            backgroundColor={tertiary}
-            color="white"
-            width="50%"
-            textAlign="right"
-            marginHorizontal={2}>
-            Scan Now
-          </BaseButton>
-        </BaseRow>
+        <BaseButton
+          backgroundColor={tertiary}
+          onPress={onScan}
+          color="white"
+          textAlign="center"
+          marginHorizontal={2}>
+          Scan Now
+        </BaseButton>
+
+        <BaseTextButton
+          onPress={onLogin}
+          padding={20}
+          color="white"
+          textAlign="center"
+          marginHorizontal={2}>
+          Login
+        </BaseTextButton>
       </BaseDiv>
     </BaseSheet>
   );

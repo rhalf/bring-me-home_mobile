@@ -13,19 +13,18 @@ import BaseButton from "../../components/common/BaseButton";
 
 import BaseDialog from "../../components/dialog/DialogImage";
 
-import photo1 from "../../assets/avatar/sample2/1.jpg";
-import photo2 from "../../assets/avatar/sample2/2.jpg";
-import photo3 from "../../assets/avatar/sample2/3.jpg";
+import photo1 from "../../assets/avatar/1.png";
+import photo2 from "../../assets/avatar/2.png";
+import photo3 from "../../assets/avatar/3.png";
+import photo4 from "../../assets/avatar/4.png";
 
 import { primary, secondary, success, tertiary } from "../../constants/colors";
 import { View, ScrollView } from "react-native";
 
-import { getAge } from "../../utilities/helper/index.js";
-
 function BeneficiaryPage() {
   const [dialogPhoto2, setDialogPhoto2] = useState(false);
   const [dialogPhoto3, setDialogPhoto3] = useState(false);
-  // const [dialogPhoto4, setDialogPhoto4] = useState(false);
+  const [dialogPhoto4, setDialogPhoto4] = useState(false);
 
   return (
     <BaseSheet backgroundColor={primary}>
@@ -36,16 +35,13 @@ function BeneficiaryPage() {
 
         <BaseDiv alignItems="center" marginTop={20}>
           <BaseTitle color="white" textAlign="center">
-            Sean Ezekiel B. Belejapa
+            Dela Cruz Jr, Juan
           </BaseTitle>
           <BaseText color="white" textAlign="center">
-            (Student)
+            Lot 4 Block 10 Major Homes, Brgy Bigaa
           </BaseText>
           <BaseText color="white" textAlign="center">
-            Green Revolutionary St. CAA
-          </BaseText>
-          <BaseText color="white" textAlign="center">
-            Las Piñas City, Metro Manila Philippines
+            Cabuyao City, Laguna Philippines
           </BaseText>
         </BaseDiv>
 
@@ -85,7 +81,7 @@ function BeneficiaryPage() {
                   setDialogPhoto3(false);
                 }}></BaseDialog>
             </View>
-            {/* <View style={{ paddingRight: 10 }}>
+            <View style={{ paddingRight: 10 }}>
               <BaseImage
                 path={photo4}
                 width={70}
@@ -101,7 +97,7 @@ function BeneficiaryPage() {
                 onCancel={() => {
                   setDialogPhoto4(false);
                 }}></BaseDialog>
-            </View> */}
+            </View>
           </BaseRow>
         </BaseDiv>
 
@@ -115,7 +111,7 @@ function BeneficiaryPage() {
               Birth Date
             </BaseText>
             <BaseText color="white" textAlign="left" width="50%">
-              AUGUST 26, 2014
+              January 12, 2010
             </BaseText>
           </BaseRow>
 
@@ -124,7 +120,7 @@ function BeneficiaryPage() {
               Age
             </BaseText>
             <BaseText color="white" textAlign="left" width="50%">
-              {getAge(new Date("August 26, 2014"))} years old
+              12 years old
             </BaseText>
           </BaseRow>
 
@@ -149,42 +145,14 @@ function BeneficiaryPage() {
 
         <BaseDiv marginTop={10}>
           <BaseTitle color="white" textAlign="left">
-            Contact Persons
+            Guardians
           </BaseTitle>
-
           <BaseRow>
             <BaseText color="white" textAlign="left" width="40%">
               Name
             </BaseText>
             <BaseText color="white" textAlign="left" width="60%">
-              Diana C. Birung
-            </BaseText>
-          </BaseRow>
-          <BaseRow>
-            <BaseText color="white" textAlign="left" width="40%">
-              Mobile
-            </BaseText>
-            <BaseText color="white" textAlign="left" width="60%">
-              0969 2474 002
-            </BaseText>
-          </BaseRow>
-          <BaseRow>
-            <BaseText color="white" textAlign="left" width="40%">
-              Email
-            </BaseText>
-            <BaseText color="white" textAlign="left" width="60%">
-              diana@bringmehome.life
-            </BaseText>
-          </BaseRow>
-
-          <BaseDiv marginTop={10}></BaseDiv>
-
-          <BaseRow>
-            <BaseText color="white" textAlign="left" width="40%">
-              Name
-            </BaseText>
-            <BaseText color="white" textAlign="left" width="60%">
-              Dennis Reyes
+              Denis Reyes
             </BaseText>
           </BaseRow>
           <BaseRow>
@@ -200,7 +168,33 @@ function BeneficiaryPage() {
               Email
             </BaseText>
             <BaseText color="white" textAlign="left" width="60%">
-              dennis@bringmehome.life
+              denis@bringmehome.life
+            </BaseText>
+          </BaseRow>
+
+          <BaseDiv marginTop={10}></BaseDiv>
+          <BaseRow>
+            <BaseText color="white" textAlign="left" width="40%">
+              Name
+            </BaseText>
+            <BaseText color="white" textAlign="left" width="60%">
+              Rhalf Wendel Caacbay
+            </BaseText>
+          </BaseRow>
+          <BaseRow>
+            <BaseText color="white" textAlign="left" width="40%">
+              Mobile
+            </BaseText>
+            <BaseText color="white" textAlign="left" width="60%">
+              0917 6088 771
+            </BaseText>
+          </BaseRow>
+          <BaseRow>
+            <BaseText color="white" textAlign="left" width="40%">
+              Email
+            </BaseText>
+            <BaseText color="white" textAlign="left" width="60%">
+              rhalf@bringmehome.life
             </BaseText>
           </BaseRow>
         </BaseDiv>
@@ -210,17 +204,19 @@ function BeneficiaryPage() {
             Allergies
           </BaseTitle>
           <BaseText color="white" textAlign="left">
-            - Buko (Minimal)
+            Anisakis Simplex
           </BaseText>
           <BaseText color="white" textAlign="left">
             - Allergic reactions to seafood
           </BaseText>
 
           <BaseText color="white" textAlign="left">
-            - Shrimp
+            Atopic dermatitis
           </BaseText>
           <BaseText color="white" textAlign="left">
-            - Tuyo
+            - is when the skin becomes easily irritated, itchy, and dry. It is
+            the most common allergic skin condition, and is more common in
+            children than adults.
           </BaseText>
         </BaseDiv>
 
@@ -229,9 +225,9 @@ function BeneficiaryPage() {
             Disabilities
           </BaseTitle>
           <BaseText color="white" textAlign="left">
-            Autism with ADHD
+            Intellectual disability
           </BaseText>
-          {/* <BaseText color="white" textAlign="left">
+          <BaseText color="white" textAlign="left">
             Autism
           </BaseText>
 
@@ -240,7 +236,7 @@ function BeneficiaryPage() {
           </BaseText>
           <BaseText color="white" textAlign="left">
             Epilepsy
-          </BaseText> */}
+          </BaseText>
         </BaseDiv>
 
         <BaseDiv marginTop={10}>
@@ -272,12 +268,12 @@ function BeneficiaryPage() {
             Medical History
           </BaseTitle>
           <BaseText color="white" textAlign="left">
-            -
+            1. cardiac stent within the last six month
           </BaseText>
           <BaseText color="white" textAlign="left">
-            -
+            2. history of infective endocarditi
           </BaseText>
-          {/* <BaseText color="white" textAlign="left">
+          <BaseText color="white" textAlign="left">
             3. artificial heart valve (PFO)
           </BaseText>
           <BaseText color="white" textAlign="left">
@@ -285,7 +281,7 @@ function BeneficiaryPage() {
           </BaseText>
           <BaseText color="white" textAlign="left">
             5. a stroke (taking blood thinners)
-          </BaseText> */}
+          </BaseText>
         </BaseDiv>
 
         <BaseDiv marginTop={10}>
